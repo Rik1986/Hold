@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<profiles>
+		<profile>
+			<id>product</id>
+			<properties>
+				<package.environment>main</package.environment>
+			</properties>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<package.environment>test</package.environment>
+			</properties>
+		</profile>
+	</profiles>
+
+
+	  <pluginRepositories>
+        <pluginRepository>
+            <id>sohu_public</id>
+            <name>sohu_public</name>
+            <url>http://10.11.152.144:8081/nexus/content/groups/public</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://10.11.152.144:8081/nexus/content/repositories/snapshots</url>            
+        </pluginRepository>
+    </pluginRepositories>
+	
+	
+
+
+	<groupId>hold</groupId>
+	<packaging>war</packaging>
+	<artifactId>hold-web</artifactId>
+	<version>${common.project.version}</version>
+	<name>hold-web</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<velocity.version>1.7</velocity.version>
+		
+        <common.project.version>1.0-SNAPSHOT</common.project.version>
+		
+		
+		
+        <!-- cv内部基础设施版本??-->
+        <framework.version>1.0-SNAPSHOT</framework.version>
+        <!--  <timeline.version>cv-1.0-SNAPSHOT</timeline.version> -->
+        <redis.cloud.client.version>1.0.1</redis.cloud.client.version> 
+        <com.sohu.cv.searchcv.version>1.0.0-SNAPSHOT</com.sohu.cv.searchcv.version>
+        <com.sohu.tag.version>0.0.2-SNAPSHOT</com.sohu.tag.version>
+        
+         <!-- 公共依赖包版本号 -->
+        <spring.version>3.0.5.RELEASE</spring.version>
+        <netty.version>3.2.5.Final</netty.version>
+        <slf4j-log4j12.version>1.6.4</slf4j-log4j12.version>
+        <slf4j-api.version>1.6.4</slf4j-api.version>
+        <junit.version>4.8.1</junit.version>
+        <mysql.connector.java.version>5.1.14</mysql.connector.java.version>
+        <xlightweb.version>2.13.2</xlightweb.version>
+        <aspectjrt.version>1.5.4</aspectjrt.version>
+        <keptcollections.version>1.0</keptcollections.version>
+        <google.guava.version>11.0.1</google.guava.version>
+        <commons.lang.version>3.1</commons.lang.version>
+        <commons.io.version>2.0.1</commons.io.version>
+        <common.conf.version>1.6</common.conf.version>
+        <commons-fileupload.version>1.2.2</commons-fileupload.version>
+        <org.codehaus.jackson.version>1.8.1</org.codehaus.jackson.version>
+        <httpclient.version>4.1.3</httpclient.version>
+        <simple.xml.version>2.6.2</simple.xml.version>
+        <proxool.version>0.9.1RC1</proxool.version>
+        <org.json.version>20090211</org.json.version>
+        <bouncycastle.version>140</bouncycastle.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.chinaren.framework</groupId>
+			<artifactId>framework-web</artifactId>
+			<version>${framework.version}</version>
+		</dependency>
+      <dependency>
+			<groupId>sohuzh-thirdCloud</groupId>
+			<version>1.0-SNAPSHOT</version>
+			<artifactId>sohuzh-thirdCloud-common</artifactId>
+	  </dependency>
+		<dependency>
+			<groupId>com.chinaren.framework</groupId>
+			<artifactId>framework-common</artifactId>
+			<version>${framework.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.chinaren.framework</groupId>
+			<artifactId>framework-core</artifactId>
+			<version>${framework.version}</version>
+			
+		</dependency>
+
+		
+		<!-- Spring -->
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${aspectjrt.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-lgpl</artifactId>
+			<version>${org.codehaus.jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-lgpl</artifactId>
+			<version>${org.codehaus.jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons.io.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>1.1</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+		<dependency>
+			<groupId>json-taglib</groupId>
+			<artifactId>json-taglib</artifactId>
+			<version>0.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.sitemesh</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>3.0-alpha-2</version>
+		</dependency>
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>${velocity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-tools</artifactId>
+            <version>2.0</version>
+        </dependency>		
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.java.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.caucho</groupId>
+			<artifactId>hessian</artifactId>
+			<version>3.1.3</version>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.1.v20120215</version>
+				<configuration>
+					<connectors>
+						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+							<port>8080</port>
+						</connector>
+					</connectors>
+					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<stopKey>stopKey</stopKey>
+					<stopPort>8888</stopPort>
+					<scanTargetPatterns>
+						<scanTargetPattern>
+							<directory>src/main/webapp</directory>
+							<includes>
+								<include>**/*.xml</include>
+								<include>**/*.properties</include>
+							</includes>
+						</scanTargetPattern>
+					</scanTargetPatterns>
+					<webAppConfig>
+						<contextPath>/</contextPath>
+					</webAppConfig>
+					<systemProperties>
+						<systemProperty>
+							<name>zk_application_name</name>
+							<value>crlib-cv-server</value>
+						</systemProperty>
+						<systemProperty>
+							<name>zk_server_version</name>
+							<value>1.0</value>
+						</systemProperty>
+						<systemProperty>
+							<name>org.apache.commons.logging.LogFactory</name>
+							<value>org.apache.commons.logging.impl.LogFactoryImpl</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+			</plugin>
+		</plugins>
+		<!---Dapplication_name=crlib-cv-server-guoguo -Dserver_version=1.0 -Dserver_port=9000 -->
+		<resources>
+			<resource>
+				<directory>${basedir}/src/${package.environment}/resources</directory>
+				<includes>
+					<include>***.properties</include>
+					<include>***.xml</include>
+					<include>**/*.vm</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+</project>

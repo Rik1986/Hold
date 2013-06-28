@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- dao -->
+    <import resource="classpath:tv-dao-config.xml"/>
+    <!-- datasource -->
+    <import resource="classpath:tv-dao-datasource-config.xml"/>
+
+	<!--声明Control 权限拦截器-->	
+	<mvc:interceptors>
+		<bean class="com.gs7.web.MoblieAuthorizeInterceptor" >
+		</bean>
+	</mvc:interceptors> 
+   
+	<!--声明aop自动代理 -->
+	<aop:aspectj-autoproxy />
+	<!--声明包扫描路径 -->	
+	<context:component-scan base-package="com.gs7" />
+	
+	<!--声明MVC bean支持注解声明 -->
+	<mvc:annotation-driven />
+	<!--声明Control 权限拦截器	
+	<mvc:interceptors>
+		<bean class="com.chinaren.tv.backend.common.interceptor.AuthorizeInterceptor" ></bean>
+	</mvc:interceptors> -->
+
+	<!--声明视图解析器为内置资源处理，的根目录与后缀类型 -->		
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 加载配置属性 -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		p:systemPropertiesMode="1" p:searchSystemEnvironment="true"
+		p:ignoreUnresolvablePlaceholders="true" >
+			<property name="locations"> 	
+				 <list>
+				 	 <value>classpath:jdbc.properties</value> 
+				 </list>
+			</property>		
+	</bean>
+	
+  
+
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+	
+
+	
+</beans>

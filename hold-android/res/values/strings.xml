@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World!</string>
+    <string name="app_name">Hold-android</string>
+
+    <string name="main">首页</string>
+    <string name="plaza">广场</string>
+    <string name="setting">设置</string>
+</resources>
