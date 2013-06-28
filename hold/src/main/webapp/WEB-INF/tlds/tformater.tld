@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+    <description>com.chinaren.twitter.util.TFormater</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>tformater</short-name>
+    <uri>http://www.sohu.com/tformater</uri>
+    <function>
+        <name>fetchTag</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String fetchTag(java.lang.String,java.lang.String,int,int,org.json.JSONArray)
+        </function-signature>
+    </function>
+
+    <function>
+        <name>isUrl</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>boolean isUrl(java.lang.String)</function-signature>
+    </function>
+
+    <function>
+        <name>isFlvUrl</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>boolean isFlvUrl(java.lang.String)</function-signature>
+    </function>
+
+    <function>
+        <name>isBrokenChar</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>boolean isBrokenChar(char,int)</function-signature>
+    </function>
+
+    <function>
+        <name>encodeGBK</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String encodeGBK(java.lang.String)</function-signature>
+    </function>
+
+    <function>
+        <name>fetchUrl</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String fetchUrl(java.lang.String,org.json.JSONArray)</function-signature>
+    </function>
+
+    <function>
+        <name>fetchWapUrl</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String fetchWapUrl(java.lang.String,org.json.JSONArray)</function-signature>
+    </function>
+
+    <function>
+        <name>fetchClientUrl</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String fetchClientUrl(java.lang.String,org.json.JSONArray)</function-signature>
+    </function>
+
+    <function>
+        <name>fetchUrl2</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String fetchUrl2(java.lang.String,org.json.JSONArray)</function-signature>
+    </function>
+
+    <function>
+        <name>fetchUrl3</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String fetchUrl3(java.lang.String,org.json.JSONArray)</function-signature>
+    </function>
+
+    <function>
+        <name>fetchEm</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String fetchEm(java.lang.String,org.json.JSONArray)</function-signature>
+    </function>
+
+    <function>
+        <name>fetchAt</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String fetchAt(java.lang.String,org.json.JSONArray)</function-signature>
+    </function>
+
+    <function>
+        <name>fetchCount</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String fetchCount(java.lang.String,org.json.JSONArray)</function-signature>
+    </function>
+
+    <function>
+        <name>fetchTopic</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String fetchTopic(java.lang.String,org.json.JSONArray)</function-signature>
+    </function>
+
+    <function>
+        <name>fetchHTML</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String fetchHTML(java.lang.String,org.json.JSONArray)</function-signature>
+    </function>
+
+    <function>
+        <name>fetchCut</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String fetchCut(java.lang.String,org.json.JSONArray)</function-signature>
+    </function>
+
+    <function>
+        <name>htmlReplace</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String htmlReplace(java.lang.String,org.json.JSONArray)</function-signature>
+    </function>
+
+    <function>
+        <name>format</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String format(java.lang.String,java.lang.String,org.json.JSONObject)
+        </function-signature>
+    </function>
+
+    <function>
+        <name>formatForGen</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String
+            formatForGen(java.lang.String,java.lang.String,org.json.JSONObject,java.util.List,java.util.List)
+        </function-signature>
+    </function>
+
+    <function>
+        <name>cutString</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String cutString(java.lang.String,int,java.lang.String)</function-signature>
+    </function>
+
+    <function>
+        <name>processEmoji</name>
+        <function-class>com.chinaren.twitter.util.TFormater</function-class>
+        <function-signature>java.lang.String processEmoji(java.lang.String)</function-signature>
+    </function>
+
+</taglib>

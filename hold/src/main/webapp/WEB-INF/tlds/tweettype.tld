@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+    <!--<description>com.sohu.twitter.msg.service.TweetType</description>-->
+    <description>com.chinaren.twitter.util.MsgType</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>tweettype</short-name>
+    <uri>http://www.sohu.com/tweettype</uri>
+    <function>
+        <name>getTypeName</name>
+        <function-class>com.sohu.twitter.msg.service.TweetType</function-class>
+        <function-signature>java.lang.String getTypeName(int)</function-signature>
+        <example>${tweettype.getTypeName(i)}</example>
+    </function>
+    <function>
+        <name>getTypeUrl</name>
+        <function-class>com.sohu.twitter.msg.service.TweetType</function-class>
+        <function-signature>java.lang.String getTypeUrl(int)</function-signature>
+        <example>${tweettype.getTypeUrl(i)}</example>
+    </function>
+</taglib>
