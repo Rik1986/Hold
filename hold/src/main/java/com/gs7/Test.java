@@ -1,4 +1,4 @@
-package com.gs7;
+﻿package com.gs7;
 
 import java.awt.Desktop;
 import java.net.CookieHandler;
@@ -15,7 +15,7 @@ public class Test {
 
     public static String word = "客户端用token加上这句话再加个随机数做md5";
 
-    //public static String MOBILEURI = "http://10.16.12.16:8002";
+    public static String MOBILEURI = "http://10.16.12.16:8002";
 
     public static String MOBILEURI = "http://127.0.0.1:8002";
 
