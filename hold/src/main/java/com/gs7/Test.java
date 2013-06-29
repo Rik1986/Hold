@@ -17,7 +17,7 @@ public class Test {
 
     public static String MOBILEURI = "http://10.16.12.16:8002";
 
-    public static String MOBILEURI = "http://127.0.0.1:8002";
+    //    public static String MOBILEURI = "http://127.0.0.1:8002";
 
     private static final String uid = "7";
 
@@ -85,10 +85,10 @@ public class Test {
      */
     public static void testUserInfo() throws Exception {
         Map<String, Object> paramsMap = new HashMap<String, Object>();
-        
+
         query(MOBILEURI + "/m/user/userInfo", paramsMap, "get");
     }
-    
+
     /**
      * 我的任务list
      * 
@@ -155,7 +155,7 @@ public class Test {
      * 
      * @throws Exception
      */
-    public static void testLogList(String pid,String cursor,String size) throws Exception {
+    public static void testLogList(String pid, String cursor, String size) throws Exception {
         Map<String, Object> paramsMap = new HashMap<String, Object>();
         paramsMap.put("pid", pid);
         paramsMap.put("cursor", cursor);
@@ -186,12 +186,12 @@ public class Test {
         //testCreate("sina");
         // testBinding("tqq");
         // testPlanList();
-    	//testUserInfo();
+        //testUserInfo();
         // testOtherPlanList("uid");
         // testCreatePlan(cid, title, desc);
         // testUpdatePlan(status, pid);
         // testcommentPlan(type, pid);
-         testLogList("1","0","20");
+        testLogList("1", "0", "20");
         // testcreatelog(new String[]{"sina","tqq"}, pid, date, success,
         // content);
     }
