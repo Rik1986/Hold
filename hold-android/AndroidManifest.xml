@@ -41,7 +41,10 @@
     	<activity android:configChanges="orientation|keyboardHidden" android:name="com.gs7.android.hold.activity.MainActivity"
             android:screenOrientation="portrait" />
     	
-    	<activity android:configChanges="orientation|keyboardHidden" android:name="com.gs7.android.hold.activity.TaskActivity"
+    	<activity android:configChanges="orientation|keyboardHidden" android:name="com.gs7.android.hold.activity.task.TaskActivity"
+            android:screenOrientation="portrait" />
+    	
+    	<activity android:configChanges="orientation|keyboardHidden" android:name="com.gs7.android.hold.activity.task.addTaskActivity"
             android:screenOrientation="portrait" />
 	</application>
 </manifest>

@@ -48,16 +48,17 @@ public class LoginActivity extends BaseActivity {
                         //                        String uid = url.substring(url.indexOf("uid=") + "uid=".length(), url.lastIndexOf("&"));
                         //                        String token = url.substring(url.indexOf("token=") + "token=".length(), url.length());
 
-                        String uid = "32";
-                        String token = "6e6a7d49d9c8603663262871f6a27e80";
-                        Constant.uid = uid;
-                        Constant.token = token;
-
+                        //                        String uid = "32";
+                        //                        String token = "6e6a7d49d9c8603663262871f6a27e80";
+                        String uid = "7";
+                        String token = "d24f6ba8d03b2d58812698487c5b5156";
                         SharedPreferences sp = getSharedPreferences(Constant.PROPERTIES_FILE_NAME, MODE_PRIVATE);
                         Editor editor = sp.edit();
                         editor.putString("uid", uid);
                         editor.putString("token", token);
                         editor.commit();
+                        Constant.uid = uid;
+                        Constant.token = token;
                         finish();
                         System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@");
                         Intent i = new Intent(view.getContext(), MainActivity.class);

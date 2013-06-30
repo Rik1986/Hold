@@ -9,6 +9,7 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
 import com.gs7.android.R;
+import com.gs7.android.hold.activity.task.TaskActivity;
 
 public class MainActivity extends TabActivity {
 

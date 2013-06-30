@@ -12,7 +12,6 @@ public class BaseActivity extends Activity {
 
     public void openActivity(Class<?> cls, Bundle b) {
         openActivity(cls, b, 0);
-        System.out.println();
     }
 
     public void openActivity(Class<?> cls, Bundle b, int requestCode) {

@@ -121,7 +121,9 @@ public class HttpUtils {
         HttpResponse response = httpClient.execute(method);
         System.out.println("######" + response.getStatusLine().getStatusCode());
         if (response.getStatusLine().getStatusCode() == 298) {
-            return EntityUtils.toString(response.getEntity());
+            String json = EntityUtils.toString(response.getEntity());
+            System.out.println("@@@@@" + json);
+            return json;
         }
         return null;
     }
